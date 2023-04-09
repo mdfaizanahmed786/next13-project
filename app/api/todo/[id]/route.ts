@@ -11,7 +11,17 @@ export async function GET(request: Request, {params}:{params:{id:string}}) {
     return NextResponse.json(getTodo)
   
    }
-export async function PUT(request: Request) {
+export async function PUT(request: Request, {params}:{params:{id:string}}) {
+    const {title}=await request.json()
+    const updateTodo=await prisma.todos.update({
+        where:{
+            id:params.id
+        },
+        data:{
+            title
+        }
+    })
+    return NextResponse.json(updateTodo)
 
    }
 export async function DELETE(request: Request, {params}:{params:{id:string}}) {

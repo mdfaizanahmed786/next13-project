@@ -14,9 +14,9 @@ const router=useRouter();
         <div
           key={todo.id}
           className="ring-1 font-bold ring-blue-500 p-2 rounded-md flex items-center"
-          onClick={()=>router.push(`/todo/${todo.id}`)}
+       
         >
-          <p className="flex-1">{todo.title}</p>
+          <p className="flex-1 cursor-pointer"    onClick={()=>router.push(`/todo/${todo.id}`)}>{todo.title}</p>
           <div className="flex gap-5">
           <button className="bg-blue-500 text-white px-3 py-1 rounded-md">Edit</button>
           <button className="bg-red-500 text-white px-3 py-1 rounded-md">Delete</button>

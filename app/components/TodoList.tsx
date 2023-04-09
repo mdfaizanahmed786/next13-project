@@ -13,15 +13,17 @@ const TodoList = (props: Props) => {
       const response = await data.json();
       
       setTodos(response);
-      setKey(prev=>prev+1);
+      
     };
     getTodos();
-  }, [todos?.length, key]);
+  }, [todos?.length]);
+
+  useEffect(()=>{}, [todos])
 
   return (
     <div>
      
-      <Todos key={key} todos={todos} />
+      <Todos  todos={todos} />
 
       
     </div>
