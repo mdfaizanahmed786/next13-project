@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Navbar  />
-        <div className='md:max-w-7xl md:mx-auto flex flex-col items-center w-full md:block'>
+        <div className='md:max-w-4xl md:mx-auto flex flex-col mt-5 items-center w-full md:block'>
         {children}
 
         </div>
