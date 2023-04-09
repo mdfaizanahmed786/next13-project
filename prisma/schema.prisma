@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Todos {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// first we initialize the prisma using the below command:
+// npx prisma init
+
+// after defining the schema, we need to tell that we have made some changes which needed to be applied to our db, so to migrate those changes we need to run the below command:
+// npx prisma migrate dev --name init (initializing our model) or npx prisma migrate dev (for development)
